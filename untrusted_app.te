@@ -210,3 +210,4 @@ neverallow untrusted_app tun_device:chr_file open;
 neverallow untrusted_app anr_data_file:file ~{ open append };
 neverallow untrusted_app anr_data_file:dir ~search;
 allow untrusted_app system_app_data_file:dir getattr;
+allow untrusted_app app_data_file:file { open read };
