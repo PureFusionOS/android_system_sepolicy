@@ -29,7 +29,7 @@ allow domain self:{ fifo_file file } rw_file_perms;
 allow domain self:unix_dgram_socket { create_socket_perms sendto };
 allow domain self:unix_stream_socket { create_stream_socket_perms connectto };
 allowxperm domain domain:{ unix_dgram_socket unix_stream_socket } ioctl unpriv_unix_sock_ioctls;
-
+allow domain dalvikcache_data_file:file r_file_perms;
 # Inherit or receive open files from others.
 allow domain init:fd use;
 
@@ -41,6 +41,8 @@ userdebug_or_eng(`
 
   allow { domain -init } su:binder { call transfer };
   allow { domain -init } su:fd use;
+
+  allow { domain -dalvikcache_data_file } su:file r_file_perms;
 
   # Running something like "pm dump com.android.bluetooth" requires
   # fifo writes
