@@ -149,6 +149,7 @@ type keychain_data_file, file_type, data_file_type;
 type keystore_data_file, file_type, data_file_type;
 type media_data_file, file_type, data_file_type;
 type media_rw_data_file, file_type, data_file_type, mlstrustedobject;
+type media_rw_app_data_file, file_type, data_file_type;
 type misc_user_data_file, file_type, data_file_type;
 type net_data_file, file_type, data_file_type;
 type nfc_data_file, file_type, data_file_type;
