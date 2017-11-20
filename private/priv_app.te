@@ -39,6 +39,7 @@ allow priv_app system_api_service:service_manager find;
 allow priv_app persistent_data_block_service:service_manager find;
 allow priv_app recovery_service:service_manager find;
 
+
 # Write to /cache.
 allow priv_app { cache_file cache_recovery_file }:dir create_dir_perms;
 allow priv_app { cache_file cache_recovery_file }:file create_file_perms;
@@ -123,6 +124,38 @@ allow priv_app mnt_media_rw_file:dir search;
 allow priv_app keystore:keystore_key gen_unique_id;
 
 read_runtime_log_tags(priv_app)
+
+#============= priv_app ==============
+allow priv_app atrace_exec:file getattr;
+allow priv_app audioserver_exec:file getattr;
+allow priv_app blkid_exec:file getattr;
+allow priv_app bootanim_exec:file getattr;
+allow priv_app bootstat_exec:file getattr;
+allow priv_app cameraserver_exec:file getattr;
+allow priv_app clatd_exec:file getattr;
+allow priv_app dexoptanalyzer_exec:file getattr;
+allow priv_app dnsmasq_exec:file getattr;
+allow priv_app drmserver_exec:file getattr;
+allow priv_app dumpstate_exec:file getattr;
+allow priv_app fsck_exec:file getattr;
+allow priv_app gatekeeperd_exec:file getattr;
+allow priv_app healthd_exec:file getattr;
+allow priv_app hwservicemanager_exec:file getattr;
+allow priv_app idmap_exec:file getattr;
+allow priv_app incident_exec:file getattr;
+allow priv_app incidentd_exec:file getattr;
+allow priv_app install_recovery_exec:file getattr;
+allow priv_app installd_exec:file getattr;
+allow priv_app keystore_exec:file getattr;
+allow priv_app lmkd_exec:file getattr;
+allow priv_app logd_exec:file getattr;
+allow priv_app mdnsd_exec:file getattr;
+allow priv_app mediadrmserver_exec:file getattr;
+allow priv_app mediaextractor_exec:file getattr;
+allow priv_app mediametrics_exec:file getattr;
+allow priv_app mediaserver_exec:file getattr;
+allow priv_app proc_interrupts:file { open read };
+allow priv_app proc_modules:file { getattr open read };
 
 ###
 ### neverallow rules
